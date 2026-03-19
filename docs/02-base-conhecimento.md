@@ -34,7 +34,7 @@ Os arquivos CSV e JSON são carregados no início da execução do sistema, util
 
 Injetar os dados diretamente no prompt (Ctrl + C + Ctrl + V) ou carregar os arquivos via código, como no exemplo abaixo:
 
-```
+```python
 import pandas as pd
 import json
 
