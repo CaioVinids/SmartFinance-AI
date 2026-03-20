@@ -66,6 +66,129 @@ Os dados são utilizados de forma híbrida. Parte das informações principais, 
 
 Dessa forma, o agente consegue manter respostas relevantes sem sobrecarregar o prompt, garantindo maior eficiência e precisão nas interações.
 
+```text
+DADOS DO CLIENTE E PERFIL (data/perfil_investidor.json):
+{
+  "nome": "João Silva",
+  "idade": 32,
+  "profissao": "Analista de Sistemas",
+  "renda_mensal": 5000.00,
+  "gastos_mensais_estimados": 2488.90,
+  "perfil_investidor": "moderado",
+  "tolerancia_perda": "baixa",
+  "horizonte_investimento": "medio_prazo",
+  "objetivo_principal": "Construir reserva de emergência",
+  "patrimonio_total": 15000.00,
+  "reserva_emergencia_atual": 10000.00,
+  "aceita_risco": false,
+  "preferencias": {
+    "liquidez": true,
+    "isento_ir": true
+  },
+  "metas": [
+    {
+      "meta": "Completar reserva de emergência",
+      "valor_necessario": 15000.00,
+      "prazo": "2026-06",
+      "prioridade": "alta"
+    },
+    {
+      "meta": "Entrada do apartamento",
+      "valor_necessario": 50000.00,
+      "prazo": "2027-12",
+      "prioridade": "media"
+    }
+  ]
+}
+
+TRANSAÇÕES DO CLIENTE (data/transacoes.csv):
+data,descricao,categoria,valor,tipo,forma_pagamento,fixo,recorrente
+2025-10-01,Salário,receita,5000.00,entrada,pix,não,sim
+2025-10-02,Aluguel,moradia,1200.00,saida,pix,sim,sim
+2025-10-03,Supermercado,alimentacao,450.00,saida,debito,não,não
+2025-10-05,Netflix,lazer,55.90,saida,credito,sim,sim
+2025-10-07,Farmácia,saude,89.00,saida,debito,não,não
+2025-10-10,Restaurante,alimentacao,120.00,saida,credito,não,não
+2025-10-12,Uber,transporte,45.00,saida,credito,não,não
+2025-10-15,Conta de Luz,moradia,180.00,saida,pix,sim,sim
+2025-10-20,Academia,saude,99.00,saida,credito,sim,sim
+2025-10-25,Combustível,transporte,250.00,saida,debito,não,não
+
+HISTORICO DE ATENDIMENTO DO CLIENTE (data/historico_atendimento.csv):
+data,canal,tema,resumo,resolvido,intencao,satisfacao
+2025-09-10,chat,Investimentos,Cliente pediu informações sobre CDB,sim,investimento,4
+2025-09-15,app,Erro no app,Erro ao acessar extrato,não,suporte,2
+2025-09-20,chat,Investimentos,Explicação sobre Tesouro Selic,sim,investimento,5
+2025-09-25,telefone,Atualização cadastral,Atualização de dados pessoais,sim,suporte,4
+2025-09-30,chat,Planejamento financeiro,Cliente solicitou ajuda para definir metas,sim,planejamento,5
+
+PRODUTOS DISPONIVEIS PARA ENSINO (data/produtos_financeiros.json):
+[
+  {
+    "nome": "Tesouro Selic",
+    "categoria": "renda_fixa",
+    "risco": "baixo",
+    "rentabilidade": "100% da Selic",
+    "aporte_minimo": 30.00,
+    "liquidez": "diaria",
+    "prazo_minimo": "0 dias",
+    "imposto": "IR regressivo",
+    "objetivo_indicado": "reserva_emergencia",
+    "indicado_para": "Reserva de emergência e iniciantes"
+  },
+  {
+    "nome": "CDB Liquidez Diária",
+    "categoria": "renda_fixa",
+    "risco": "baixo",
+    "rentabilidade": "102% do CDI",
+    "aporte_minimo": 100.00,
+    "liquidez": "diaria",
+    "prazo_minimo": "0 dias",
+    "imposto": "IR regressivo",
+    "objetivo_indicado": "reserva_emergencia",
+    "indicado_para": "Quem busca segurança com rendimento diário"
+  },
+  {
+    "nome": "LCI/LCA",
+    "categoria": "renda_fixa",
+    "risco": "baixo",
+    "rentabilidade": "95% do CDI",
+    "aporte_minimo": 1000.00,
+    "liquidez": "baixa",
+    "prazo_minimo": "90 dias",
+    "imposto": "isento",
+    "objetivo_indicado": "medio_prazo",
+    "indicado_para": "Quem pode esperar 90 dias (isento de IR)"
+  },
+  {
+    "nome": "Fundo Multimercado",
+    "categoria": "fundo",
+    "risco": "medio",
+    "rentabilidade": "CDI + 2%",
+    "aporte_minimo": 500.00,
+    "liquidez": "media",
+    "prazo_minimo": "30 dias",
+    "imposto": "IR regressivo",
+    "objetivo_indicado": "diversificacao",
+    "indicado_para": "Perfil moderado que busca diversificação"
+  },
+  {
+    "nome": "Fundo de Ações",
+    "categoria": "fundo",
+    "risco": "alto",
+    "rentabilidade": "variavel",
+    "aporte_minimo": 100.00,
+    "liquidez": "baixa",
+    "prazo_minimo": "30 dias",
+    "imposto": "IR regressivo",
+    "objetivo_indicado": "longo_prazo",
+    "indicado_para": "Perfil arrojado com foco no longo prazo"
+  }
+]
+
+```
+
+
 ---
 
 ## Exemplo de Contexto Montado
