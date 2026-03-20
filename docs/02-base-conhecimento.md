@@ -196,7 +196,7 @@ PRODUTOS DISPONIVEIS PARA ENSINO (data/produtos_financeiros.json):
 
 ```
 Dados do Cliente:
-- Nome: João Silva
+- Nome: Matheus Silva
 - Idade: 32 anos
 - Profissão: Analista de Sistemas
 - Perfil de Investidor: Moderado
