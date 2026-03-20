@@ -210,7 +210,7 @@ Completar reserva de emergência
 - Valor necessário: R$ 15.000
 - Valor atual: R$ 10.000
 - Prioridade: Alta
-- Entrada do apartamento
+Entrada do apartamento
 - Valor necessário: R$ 50.000
 - Prazo: 12-2027
 - Prioridade: Média
@@ -225,8 +225,6 @@ Resumo financeiro:
 - 02/10: Aluguel - R$ 1.200 (fixo)
 - 03/10: Supermercado - R$ 450
 - 05/10: Netflix - R$ 55,90 (fixo)
-- 10/10: Restaurante - R$ 120
-- 12/10: Uber - R$ 45
 
 Histórico recente:
 - Interesse em CDB e Tesouro Selic
