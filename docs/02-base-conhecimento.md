@@ -188,7 +188,6 @@ PRODUTOS DISPONIVEIS PARA ENSINO (data/produtos_financeiros.json):
 
 ```
 
-
 ---
 
 ## Exemplo de Contexto Montado
@@ -199,28 +198,40 @@ PRODUTOS DISPONIVEIS PARA ENSINO (data/produtos_financeiros.json):
 Dados do Cliente:
 - Nome: João Silva
 - Idade: 32 anos
-- Perfil: Moderado
+- Profissão: Analista de Sistemas
+- Perfil de Investidor: Moderado
+- Tolerância a perda: Baixa
 - Renda mensal: R$ 5.000
 - Gastos mensais estimados: R$ 2.488,90
-- Objetivo principal: Construir reserva de emergência
-- Reserva atual: R$ 10.000
+- Capacidade de economia: ~R$ 2.500
 
 Metas:
-- Completar reserva de emergência (R$ 15.000 até 2026-06)
-- Entrada do apartamento (R$ 50.000 até 2027-12)
+Completar reserva de emergência
+- Valor necessário: R$ 15.000
+- Valor atual: R$ 10.000
+- Prioridade: Alta
+- Entrada do apartamento
+- Valor necessário: R$ 50.000
+- Prazo: 12-2027
+- Prioridade: Média
 
 Resumo financeiro:
-- Capacidade de economia mensal: aproximadamente R$ 2.500
-- Maior gasto: Moradia
+- Percentual de gastos: 50% da renda
+- Maior categoria de gasto: Moradia
+- Situação: Financeiramente equilibrada, com boa capacidade de poupança
 
 Últimas transações:
 - 01/10: Salário + R$ 5.000
-- 02/10: Aluguel - R$ 1.200
+- 02/10: Aluguel - R$ 1.200 (fixo)
 - 03/10: Supermercado - R$ 450
-- 05/10: Netflix - R$ 55,90
+- 05/10: Netflix - R$ 55,90 (fixo)
+- 10/10: Restaurante - R$ 120
+- 12/10: Uber - R$ 45
 
 Histórico recente:
 - Interesse em CDB e Tesouro Selic
 - Solicitação de planejamento financeiro
 ...
 ```
+
+---
