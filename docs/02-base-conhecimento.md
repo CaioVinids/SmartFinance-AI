@@ -49,18 +49,14 @@ Os arquivos CSV e JSON são carregados no início da execução do sistema, util
 Injetar os dados diretamente no prompt (Ctrl + C + Ctrl + V) ou carregar os arquivos via código, como no exemplo abaixo:
 
 ```python
-import pandas as pd
 import json
+import pandas as pd
 
-#CSVs
-historico = pd.read_csv('data/historico_atendimento.csv')
-transacoes = pd.read_csv('data/transacoes.csv')
-
-#JSONs
-with open('data/perfil_investidor.json', 'r', encoding='utf-8') as f:
-    perfil = json.load(f)
-with open('data/produtos_financeiros.json', 'r', encoding='utf-8') as f:
-    produtos = json.load(f)
+# ============ Carregar os dados ============
+perfil = json.load('./data/perfil_investidor.json')
+transacoes = pd.read_csv('./data/transacoes.csv')
+historico = pd.read_csv('./data/historico_atendimento.csv')
+produtos = json.load('./data/produtos_financeiros.json')
 ```
 
 ### Como os dados são usados no prompt?
