@@ -53,10 +53,10 @@ import json
 import pandas as pd
 
 # ============ Carregar os dados ============
-perfil = json.load('./data/perfil_investidor.json')
+perfil = json.load(open('./data/perfil_investidor.json'))
 transacoes = pd.read_csv('./data/transacoes.csv')
 historico = pd.read_csv('./data/historico_atendimento.csv')
-produtos = json.load('./data/produtos_financeiros.json')
+produtos = json.load(open('./data/produtos_financeiros.json'))
 ```
 
 ### Como os dados são usados no prompt?
