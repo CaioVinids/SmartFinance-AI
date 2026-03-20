@@ -1,5 +1,19 @@
 # Base de Conhecimento
 
+> [!TIP]
+> Prompt Utilizado para esta etapa: Preciso organizar a base de conhecimento do meu agente financeiro inteligente. Tenho estes arquivos de dados [liste os arquivos].
+> 
+> Me ajuda a:
+> - Entender o que cada arquivo contém
+> - Decidir como usar cada um dentro do agente
+> - Criar um exemplo de contexto formatado para incluir no prompt
+> 
+> Use o template abaixo como base:
+> 
+> [cole o template 02-base-conhecimento.md]
+
+---
+
 ## Dados Utilizados
 
 | Arquivo | Formato | Utilização no Agente |
