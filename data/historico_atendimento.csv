@@ -1,6 +1,6 @@
-data,canal,tema,resumo,resolvido
-2025-09-15,chat,CDB,Cliente perguntou sobre rentabilidade e prazos,sim
-2025-09-22,telefone,Problema no app,Erro ao visualizar extrato foi corrigido,sim
-2025-10-01,chat,Tesouro Selic,Cliente pediu explicação sobre o funcionamento do Tesouro Direto,sim
-2025-10-12,chat,Metas financeiras,Cliente acompanhou o progresso da reserva de emergência,sim
-2025-10-25,email,Atualização cadastral,Cliente atualizou e-mail e telefone,sim
+data,canal,tema,resumo,resolvido,intencao,satisfacao
+2025-09-10,chat,Investimentos,Cliente pediu informações sobre CDB,sim,investimento,4
+2025-09-15,app,Erro no app,Erro ao acessar extrato,não,suporte,2
+2025-09-20,chat,Investimentos,Explicação sobre Tesouro Selic,sim,investimento,5
+2025-09-25,telefone,Atualização cadastral,Atualização de dados pessoais,sim,suporte,4
+2025-09-30,chat,Planejamento financeiro,Cliente solicitou ajuda para definir metas,sim,planejamento,5
