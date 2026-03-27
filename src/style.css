@@ -1,0 +1,113 @@
+/* ── 1. Fundo com Grid Estabilizado ── */
+html, body, [data-testid="stAppViewContainer"] {
+    background-color: #dce9f5 !important;
+    background-image:
+        linear-gradient(rgba(160, 200, 235, 0.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(160, 200, 235, 0.25) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-attachment: fixed;
+    scroll-behavior: auto !important;
+}
+
+/* ── 2. Ocultar elementos padrão ── */
+[data-testid="stHeader"],
+[data-testid="stToolbar"],
+#MainMenu,
+footer {
+    display: none !important;
+}
+
+/* ── 3. Header Customizado ── */
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #e2eaf3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 calc((100vw - 728px) / 2 + 16px);
+    z-index: 10000;
+}
+
+.header-logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+
+.header-logo .blue {
+    color: #004cff;
+}
+
+.header-badge {
+    background: #eef4fd;
+    border: 1px solid #b8d4f0;
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 14px;
+    color: #3b82f6;
+}
+
+/* ── 4. Container Principal ── */
+.main .block-container {
+    padding-top: 100px !important;
+    padding-bottom: 0px !important; 
+    max-width: 728px;
+}
+
+/* ── 5. Chat Input (Caixa Branca e Texto Preto) ── */
+[data-testid="stBottomBlockContainer"] {
+    background-color: #dce9f5 !important;
+    padding-bottom: 40px !important;
+    padding-top: 20px !important;
+    z-index: 999;
+}
+
+/* ── Força a caixa ser BRANCA em todos os estados ──  */
+[data-testid="stChatInputContainer"], 
+[data-testid="stChatInputContainer"] > div,
+[data-testid="stChatInputContainer"] textarea {
+    background-color: white !important;
+    border: 1px solid #e2eaf3 !important;
+    border-radius: 14px !important;
+}
+
+/* ── Texto e Placeholder ──  */
+textarea[data-testid="stChatInputTextArea"] {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+textarea[data-testid="stChatInputTextArea"]::placeholder {
+    color: #000000 !important;
+    opacity: 1 !important;
+}
+
+/* ── 6. Estabilização do Container de Mensagens ── */
+[data-testid="stChatMessageContainer"] {
+    padding-bottom: 250px !important;
+    margin-bottom: -100px !important;
+}
+
+[data-testid="stChatMessage"] {
+    background: white !important;
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    margin-bottom: 12px;
+}
+
+/* ── Desativa animações nativas que conflitam com o scroll manual ──  */
+.st-emotion-cache-128upt6, .st-emotion-cache-v698uo {
+    background: transparent !important;
+    transition: none !important;
+}
+
+/* ── Bloqueia o jitter horizontal ──  */
+.main {
+    overflow-x: hidden !important;
+}
