@@ -2,10 +2,10 @@
 
 | Tempo | Seção | O que falar |
 |---------|---------|---------------------|
-| 0:00 - 0:30 | Problema | Pessoas não sabem para onde vai o dinheiro nem como atingir metas financeiras |
-| 0:30 - 1:30   | Soluçao | PlanejaAI analisa gastos, metas e perfil, oferecendo orientação financeira personalizada |
-| 1:30 - 2:30   | Demo | Mostro como calcular quanto guardar por mês e receber recomendações de investimentos seguras. |
-| 2:30 - 3:00   | Diferencial | Personalização, segurança e educação financeira com base no perfil real do usuário |
+| 0:00 - 0:30 | Problema | Muitas pessoas não sabem para onde o dinheiro vai e têm dificuldade em atingir metas financeiras |
+| 0:30 - 1:30   | Solução | O PlanejaAI analisa gastos, metas e perfil para orientar decisões financeiras de forma personalizada |
+| 1:30 - 2:30   | Demonstração | Mostro como o agente calcula economia mensal e sugere investimentos alinhados ao perfil |
+| 2:30 - 3:00   | Diferencial | A solução une personalização, segurança e educação financeira |
 
 ## Roteiro do PlanejaAI
 
@@ -21,10 +21,10 @@ Na prática, ele utiliza dados como renda, gastos, metas e perfil de investidor 
 
 O agente consegue:
 
-Analisar os gastos e identificar padrões
-Ajudar no planejamento de metas financeiras
-Simular cenários, como quanto economizar por mês
-E recomendar investimentos adequados ao perfil do usuário
+- Analisar os gastos e identificar padrões
+- Ajudar no planejamento de metas financeiras
+- Simular cenários, como quanto economizar por mês
+- E recomendar investimentos adequados ao perfil do usuário
 
 Tudo isso com uma linguagem simples, educativa e sem impor decisões.
 
@@ -32,7 +32,7 @@ Tudo isso com uma linguagem simples, educativa e sem impor decisões.
 Por exemplo, se o usuário pergunta:
 "Quanto preciso guardar por mês para atingir minha meta?"
 
-O agente analisa os dados disponíveis e responde com base na realidade do usuário. Se faltar alguma informação, ele não inventa, ele explica o que falta e como calcular.
+O agente analisa os dados disponíveis e responde com base na realidade do usuário. Se faltar alguma informação, ele não inventa dados, ele explica exatamente o que falta.
 
 Se o usuário pergunta:
 "Onde devo investir meu dinheiro?"
@@ -44,16 +44,14 @@ E se a pergunta estiver fora do escopo, como previsão do tempo, ele responde de
 ### 4. Diferencial e Impacto (30 seg)
 O grande diferencial do PlanejaAI é a combinação de personalização com segurança.
 
-Ele não apenas responde perguntas, ele interpreta o contexto financeiro do usuário, evita inventar informações e toma decisões baseadas em dados reais.
+Ele não apenas responde perguntas, mas interpreta o contexto financeiro do usuário e evita gerar informações incorretas ou inventadas.
 
-Além disso, ele atua como um educador financeiro, ajudando o usuário a entender o “porquê” das recomendações.
+Além disso, atua como um educador financeiro, ajudando o usuário a entender o “porquê” das recomendações.
 
-Isso torna a solução não só útil, mas também confiável e escalável, podendo ser aplicada em apps financeiros reais no futuro.
+Na prática, isso faz com que o usuário possa confiar nas recomendações e usar o PlanejaAI como apoio real nas decisões do dia a dia.
 
 ---
 
 ## Link do Vídeo
-
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
 
 [Link do vídeo]
