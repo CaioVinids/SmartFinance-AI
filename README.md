@@ -6,19 +6,21 @@
 
 ## 🎯 Sobre o Projeto
 
-O **PlanejaAI** é um agente financeiro inteligente que atua como educador e consultor pessoal de finanças. Ele analisa o perfil, histórico de transações e comportamento financeiro do usuário para oferecer orientações personalizadas, identificar padrões de gastos e sugerir metas.
+O **PlanejaAI** é um agente financeiro inteligente que atua como educador e consultor pessoal de finanças. 
 
-**Problema que resolve:** A maioria das pessoas não tem acesso a um consultor financeiro. O PlanejaAI resolve isso usando IA generativa para oferecer orientação de forma simples e acessível.
+Ele analisa dados como perfil do usuário, histórico de transações e metas financeiras para oferecer orientações personalizadas, ajudando na tomada de decisões mais conscientes.
+
+**Problema que resolve:** Muitas pessoas não sabem para onde o dinheiro está indo e têm dificuldade em organizar suas finanças ou atingir metas. O PlanejaAI resolve isso oferecendo orientação financeira acessível, personalizada e baseada em dados.
 
 ---
 
 ## ✨ Funcionalidades
 
 - 🧠 **Análise de perfil** — identifica o perfil do investidor (conservador, moderado, arrojado)
-- 📊 **Diagnóstico financeiro** — interpreta histórico de transações e aponta padrões
-- 🎯 **Planejamento de metas** — sugere objetivos com base na realidade do usuário
-- 💬 **Educação contextual** — explica conceitos financeiros sob demanda, de forma didática
-- 🛡️ **Respostas seguras** — arquitetura anti-alucinação com base de conhecimento estruturada
+- 📊 **Diagnóstico financeiro** — interpreta transações e identifica padrões de gastos
+- 🎯 **Planejamento de metas** — calcula quanto economizar e sugere estratégias
+- 💬 **Educação contextual** — explica conceitos financeiros de forma simples
+- 🛡️ **Respostas seguras** — evita alucinações e usa apenas dados do contexto
 
 ---
 
@@ -55,7 +57,7 @@ SmartFinance-AI/
 | Camada | Tecnologia |
 |---|---|
 | Interface | Streamlit + CSS |
-| LLM | API de IA Generativa (Ollama - Local) |
+| LLM | Ollama (modelo Local) |
 | Dados | CSV + JSON (mockados) |
 | Linguagem | Python |
 
@@ -65,11 +67,19 @@ SmartFinance-AI/
 
 Toda a documentação do agente está na pasta [`docs/`](./docs):
 
-- **[Documentação do Agente](./docs/01-documentacao-agente.md)** — persona, arquitetura e segurança
-- **[Base de Conhecimento](./docs/02-base-conhecimento.md)** — estrutura e estratégia dos dados
-- **[Prompts](./docs/03-prompts.md)** — system prompt, exemplos e edge cases
-- **[Métricas](./docs/04-metricas.md)** — como a qualidade do agente é avaliada
+- **[Documentação do Agente](./docs/01-documentacao-agente.md)** — arquitetura, persona e segurança
+- **[Base de Conhecimento](./docs/02-base-conhecimento.md)** — estrutura e uso dos dados
+- **[Prompts](./docs/03-prompts.md)** — system prompt e comportamento do agente
+- **[Métricas](./docs/04-metricas.md)** — avaliação e testes
 - **[Pitch](./docs/05-pitch.md)** — apresentação do projeto
+
+---
+
+## 🚀 Como Executar
+
+As instruções para execução do projeto estão na pasta [`src/`](./src):
+
+- **[Passo a Passo de Execução](./src/README.md)**
 
 ---
 
