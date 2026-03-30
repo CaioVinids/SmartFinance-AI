@@ -1,149 +1,78 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 💸 PlanejaAI — Educador Financeiro Inteligente
 
-## Contexto
-
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+> Agente de educação financeira com IA Generativa, desenvolvido durante o **Bootcamp Bradesco – GenAI & Dados**.
 
 ---
 
-## O Que Você Deve Entregar
+## 🎯 Sobre o Projeto
 
-### 1. Documentação do Agente
+O **PlanejaAI** é um agente financeiro inteligente que atua como educador e consultor pessoal de finanças. Ele analisa o perfil, histórico de transações e comportamento financeiro do usuário para oferecer orientações personalizadas, identificar padrões de gastos e sugerir metas.
 
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+**Problema que resolve:** A maioria das pessoas não tem acesso a um consultor financeiro. O PlanejaAI resolve isso usando IA generativa para oferecer orientação de forma simples e acessível.
 
 ---
 
-### 2. Base de Conhecimento
+## ✨ Funcionalidades
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+- 🧠 **Análise de perfil** — identifica o perfil do investidor (conservador, moderado, arrojado)
+- 📊 **Diagnóstico financeiro** — interpreta histórico de transações e aponta padrões
+- 🎯 **Planejamento de metas** — sugere objetivos com base na realidade do usuário
+- 💬 **Educação contextual** — explica conceitos financeiros sob demanda, de forma didática
+- 🛡️ **Respostas seguras** — arquitetura anti-alucinação com base de conhecimento estruturada
 
 ---
 
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+## 🗂️ Estrutura do Repositório
 
 ```
-📁 lab-agente-financeiro/
+SmartFinance-AI/
 │
-├── 📄 README.md
+├── data/
+│   ├── transacoes.csv              # Histórico de transações do usuário
+│   ├── historico_atendimento.csv   # Atendimentos anteriores
+│   ├── perfil_investidor.json      # Perfil e preferências do usuário
+│   └── produtos_financeiros.json   # Produtos e serviços disponíveis
 │
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
+├── docs/
+│   ├── 01-documentacao-agente.md   # Caso de uso, persona e arquitetura
+│   ├── 02-base-conhecimento.md     # Estratégia de dados e fontes
+│   ├── 03-prompts.md               # Engenharia de prompts (system + exemplos)
+│   ├── 04-metricas.md              # Avaliação, métricas e testes
+│   └── 05-pitch.md                 # Roteiro do pitch (3 min)
 │
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
+├── src/
+│   └── app.py                      # Aplicação principal (Streamlit)
+│   ├── style.css                   # Estilização da interface
+│   └── README.md                   # Instruções de instalação e execução
 │
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+└── README.md
 ```
 
 ---
 
-## Dicas Finais
+## 🛠️ Tecnologias
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+| Camada | Tecnologia |
+|---|---|
+| Interface | Streamlit + CSS |
+| LLM | API de IA Generativa (Ollama - Local) |
+| Dados | CSV + JSON (mockados) |
+| Linguagem | Python |
+
+---
+
+## 📄 Documentação
+
+Toda a documentação do agente está na pasta [`docs/`](./docs):
+
+- **[Documentação do Agente](./docs/01-documentacao-agente.md)** — persona, arquitetura e segurança
+- **[Base de Conhecimento](./docs/02-base-conhecimento.md)** — estrutura e estratégia dos dados
+- **[Prompts](./docs/03-prompts.md)** — system prompt, exemplos e edge cases
+- **[Métricas](./docs/04-metricas.md)** — como a qualidade do agente é avaliada
+- **[Pitch](./docs/05-pitch.md)** — apresentação do projeto
+
+---
+
+## 🤖 Agente
+
+<img width="1915" height="1007" alt="image" src="https://github.com/user-attachments/assets/eb32ebb3-e3d8-4c37-8f94-0238bbe8e24a" />
