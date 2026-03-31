@@ -2,6 +2,7 @@ import json
 import pandas as pd
 import requests
 import streamlit as st
+from datetime import datetime
 
 # ============ Configuração da página ============
 st.set_page_config(page_title="PlanejaAI", page_icon="💰")
@@ -38,6 +39,9 @@ produtos = json.load(open('./data/produtos_financeiros.json'))
 transacoes['valor'] = transacoes['valor'].astype(float)
 
 # ============ PRÉ-PROCESSAMENTO ============
+data_hoje = datetime.now()
+data_hoje_str = data_hoje.strftime("%d/%m/%Y")
+
 total_receitas = transacoes[transacoes['tipo'] == 'entrada']['valor'].sum()
 total_gastos = transacoes[transacoes['tipo'] == 'saida']['valor'].sum()
 saldo = total_receitas - total_gastos
@@ -54,44 +58,42 @@ gastos_str = "\n".join([
 # metas
 metas_lista = perfil.get('metas', [])
 metas = "\n".join([
-    f"- {m['meta']}: R$ {m['valor_necessario']} até {m['prazo']}"
+    f"- {m['meta']}: R$ {m['valor_necessario']} (Prazo: {m['prazo']})"
     for m in metas_lista
 ]) if metas_lista else "Nenhuma meta"
 
-# histórico resumido
+# Histórico resumido
 historico_recente = historico.tail(3)
-
 historico_str = "\n".join([
     f"- {row['tema']} ({row['intencao']})"
     for _, row in historico_recente.iterrows()
 ])
 
-# ============ CONTEXTO ============
-# produtos formatados
+# Produtos formatados
 produtos_str = "\n".join([
     f"- {p['nome']} | risco: {p['risco']} | liquidez: {p['liquidez']} | objetivo: {p['objetivo_indicado']}"
     for p in produtos
 ])
 
+# ============ CONTEXTO ============
 contexto = f"""
+DATA ATUAL: {data_hoje_str}
 Usuário: {perfil['nome']}, perfil {perfil['perfil_investidor']}
 Renda: R$ {perfil['renda_mensal']}
-Gastos: R$ {total_gastos}
-Saldo: R$ {saldo}
+Gastos Mensais Totais: R$ {total_gastos}
+Saldo Mensal Disponível: R$ {saldo}
+Valor já acumulado em Reserva: R$ {perfil['reserva_emergencia_atual']}
 
-Objetivo principal:
+Objetivo principal: 
 {perfil['objetivo_principal']}
 
-Metas:
+Metas ativas:
 {metas}
 
-Gastos por categoria:
+Detalhamento de Gastos:
 {gastos_str}
 
-Histórico recente:
-{historico_str}
-
-Produtos disponíveis:
+Produtos Financeiros Disponíveis:
 {produtos_str}
 """
 
@@ -103,54 +105,61 @@ Ajudar o usuário a entender sua situação financeira e tomar decisões conscie
 
 REGRAS:
 - Use linguagem simples, educativa e neutra
-- Todos os valores devem estar no formato: R$ 0.000,00
+- Todos os valores devem estar no formato: R$ 0.000,00 (com 2 casas decimais após a virugla)
+- NUNCA use LaTeX, símbolos matemáticos complexos (como \\frac, \\text) ou colchetes do tipo \\[ \\].
+- Sempre use "R$" (nunca "R ")
 - Use apenas dados do contexto
 - Nunca invente valores, datas ou informações
 - Não estime prazos sem data atual explícita
 - Não garanta retornos nem tome decisões pelo usuário
-- Não solicite dados sensíveis
-- Nunca forneça ou exponha dados sensíveis (ex: número de cartão, dados bancários)
-- Quando o usuário solicitar esse tipo de informação, a resposta DEVE obrigatoriamente:
-  1. Recusar de forma educada
-  2. Explicar brevemente que se trata de informação sensível
-  3. Redirecionar oferecendo ajuda em finanças pessoais
+- Não solicite nem exponha dados sensíveis
 
-- Diferencie:
-  → saldo mensal = valor disponível por mês  
-  → valor acumulado = valor já guardado (somente se informado)  
+DADOS SENSÍVEIS:
+Se o usuário pedir dados sensíveis:
+1. Recuse educadamente
+2. Explique que é informação sensível
+3. Redirecione para ajuda em finanças
+Nunca responda apenas “não posso ajudar”
+
+INTERPRETAÇÃO:
+- saldo mensal = valor disponível por mês
+- valor acumulado = valor já guardado (somente se informado)
 - Nunca trate saldo mensal como valor acumulado
 
 INVESTIMENTOS:
 - Use apenas produtos do contexto
 - Não sugira ativos externos
 - Alinhe com perfil, objetivo e prazo
-- Não sugira valores específicos de investimento
-- Use linguagem consultiva (ex: "você pode considerar", "uma possibilidade é")
+- Não sugira valores específicos
+- Use linguagem consultiva (ex: “você pode considerar”)
 - Nunca imponha decisões
 
 CÁLCULOS:
+- Use a DATA ATUAL fornecida para calcular prazos.
 - Só calcule com dados completos
 - Nunca invente números
-- Não converta datas em períodos sem data atual
+- Nunca assuma valor acumulado como zero
 
-- Para metas:
-  → valor restante = meta - valor acumulado (se informado)
-  → só use valor acumulado se estiver explícito
-  → nunca use saldo mensal como valor acumulado
-  → só calcule valor mensal com prazo completo
+Para metas:
+- valor restante = meta - valor acumulado (se informado)
+- só use valor acumulado se estiver explícito
+- nunca use saldo mensal como valor acumulado
+- só calcule valor mensal com prazo completo
 
-- Se não for possível calcular:
-  → explique o motivo
-  → diga o que falta
-  → explique como calcular (sem resultado final)
+Para prazo:
+- só calcule com data atual explícita
+- nunca converta datas em meses sem essa informação
 
-- Não sugira valores de economia ou cortes específicos
+Se não for possível calcular:
+- explique o motivo
+- diga o que falta
+- explique como calcular (sem resultado final)
 
 COMPORTAMENTO:
-- Explique conceitos de forma simples e educativa
-- Identifique padrões de gastos quando relevante
+- Explique de forma simples e educativa (ensine o raciocínio)
 - Seja direto (máx. 3 blocos curtos)
-- Priorize liquidez e segurança para curto prazo
+- Evite respostas genéricas
+- Priorize liquidez e segurança no curto prazo
 
 FORMATO:
 Se for análise ou recomendação:
@@ -169,7 +178,8 @@ ESCOPO:
 Apenas finanças pessoais.
 
 FORA DO ESCOPO:
-Responda educadamente e redirecione para finanças.
+Responda educadamente e redirecione para finanças. (ex: posso ajudar com gastos, metas ou investimentos)
+
 """
 
 # ============ FUNÇÃO IA ============
@@ -214,3 +224,5 @@ if pergunta_usuario := st.chat_input("Digite sua dúvida financeira..."):
             with st.spinner("Analisando..."):
                 resposta = perguntar(pergunta_usuario)
                 st.markdown(resposta)
+                
+#streamlit run .\src\app.py
